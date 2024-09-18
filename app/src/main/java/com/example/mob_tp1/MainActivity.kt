@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         // Button initialization
         binding.btnResult.setOnClickListener {
-            binding.topScreen.text = "${binding.topScreen.text} +1"
+            binding.topScreen.text = "${binding.topScreen.text} +3"
         }
     }
 }
