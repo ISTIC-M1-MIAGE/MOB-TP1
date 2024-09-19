@@ -26,84 +26,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Button initialization
-        binding.btn0.setOnClickListener {
-            if (binding.bottomScreen.text != "0") {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}0"
-            }
-        }
-
-        binding.btn1.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "1"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}1"
-            }
-        }
-
-        binding.btn2.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "2"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}2"
-            }
-        }
-
-        binding.btn3.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "3"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}3"
-            }
-        }
-
-        binding.btn4.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "4"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}4"
-            }
-        }
-
-        binding.btn5.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "5"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}5"
-            }
-        }
-
-        binding.btn6.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "6"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}6"
-            }
-        }
-
-        binding.btn7.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "7"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}7"
-            }
-        }
-
-        binding.btn8.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "8"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}8"
-            }
-        }
-
+        // NB: Faire une boucle pour configurer tous les boutons
         binding.btn9.setOnClickListener {
-            if (binding.bottomScreen.text == "0") {
-                binding.bottomScreen.text = "9"
-            } else {
-                binding.bottomScreen.text = "${binding.bottomScreen.text}9"
-            }
+            onButtonClick(binding.btn9.text.toString())
         }
         
+    }
+
+    fun onButtonClick(btnText: String?){
+        if (binding.bottomScreen.text == "0") {
+            binding.bottomScreen.text = btnText
+        }else{
+            binding.bottomScreen.text = "${binding.bottomScreen.text}${btnText}"
+        }
+
     }
 }
